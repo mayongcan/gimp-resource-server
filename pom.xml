@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+  	<artifactId>gimp-resource-server</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>gimp-resource-server</name>
+	<description>图片文件资源服务器</description>
+
+	<parent>
+		<groupId>com.gimplatform</groupId>
+		<artifactId>gimp-pom</artifactId>
+		<version>1.0.2</version>
+		<relativePath>../gimp-pom/pom.xml</relativePath>
+	</parent>
+	
+	<properties>
+  		<commons-lang3.version>3.5</commons-lang3.version>
+	</properties>
+	
+	<dependencies>
+		<!-- 添加spring boot相关支持 begin -->
+		<!-- 使用Spring MVC构建WEB应用，包括RESTful,Tomcat是默认的内嵌容器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!-- 添加Eureka的依赖 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		
+	    <dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+	        <version>${commons-lang3.version}</version>
+		</dependency>
+	</dependencies>
+</project>

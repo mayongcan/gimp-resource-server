@@ -1,0 +1,25 @@
+server:
+    #程序启动端口
+    port: 8053
+    
+# 指定注册中心的地址
+eureka:
+    instance:
+        #为true时，客户端在注册时就会使用自己的ip地址而不是主机名
+        preferIpAddress: true
+    client:
+        serviceUrl:
+            defaultZone: http://gimp-discovery:8047/eureka/
+            
+
+#log4j2路径配置        
+logging:
+    config: classpath:log4j2.xml
+
+spring:
+    application:
+        name: gimp-resource-server
+        
+resourceServer:
+    uploadFilePath: /Users/zzd/Work/ProjectRun/Resources/
+    
