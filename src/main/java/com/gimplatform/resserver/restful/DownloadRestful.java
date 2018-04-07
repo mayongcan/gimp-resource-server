@@ -37,7 +37,16 @@ public class DownloadRestful {
     private String uploadFilePath;
 
     /**
-     * 下载文件
+     * 获取资源文件真实路径
+     * @return
+     */
+    @RequestMapping(value="/getFilePath",method=RequestMethod.POST)
+    public String getFilePath(){
+        return uploadFilePath;
+    }
+
+    /**
+     * 下载文件，将文件打包成zip下载
      * @param file
      * @return
      */
@@ -79,6 +88,7 @@ public class DownloadRestful {
         response.setContentType("multipart/form-data");
         return response.getOutputStream();
     }
+    
     /**
      * 将byte[]类型的数据，写入到输出流中
      *
