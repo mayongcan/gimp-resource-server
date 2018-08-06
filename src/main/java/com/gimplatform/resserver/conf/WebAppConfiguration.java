@@ -1,5 +1,7 @@
 package com.gimplatform.resserver.conf;
 
+import java.io.File;
+
 import javax.servlet.MultipartConfigElement;
 
 import org.apache.logging.log4j.LogManager;
@@ -54,6 +56,13 @@ public class WebAppConfiguration {
     @Bean
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
+        //处理临时文件
+        String location = System.getProperty("user.dir") + "/data/tmp";
+        File tmpFile = new File(location);
+        if (!tmpFile.exists()) {
+            tmpFile.mkdirs();
+        }
+        factory.setLocation(location);
         return factory.createMultipartConfig();
     }
 }
