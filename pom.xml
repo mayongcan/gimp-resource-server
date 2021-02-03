@@ -18,7 +18,7 @@
 	
 	<properties>
   		<commons-lang3.version>3.5</commons-lang3.version>
-		<org.apache.ant.version>1.10.0</org.apache.ant.version>
+		<org.apache.ant.version>1.10.9</org.apache.ant.version>
 	</properties>
 	
 	<dependencies>
